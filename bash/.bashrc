@@ -75,7 +75,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls --color=auto -AF'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -85,9 +85,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias la='ls -AlF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -118,3 +116,35 @@ alias cdc='cd /opt/bcm/OnePhone/pub/builds'
 alias ssh='ssh -i ~/.ssh/devuser'
 alias scp='scp -i ~/.ssh/devuser'
 source /opt/bcm/WRL/build_env.sh
+
+# Add ability to go back many directories with only ellipses
+alias ..="cd .."
+alias ...="cd ../.."
+
+# cdh takes me to home directory
+alias cdh='cd ~/'
+
+# Change history behavior
+export HISTFILESIZE=20000
+export HISTSIZE=10000
+shopt -s histappend
+# Combine multiline commands into one in history
+shopt -s cmdhist
+# Ignore duplicates, ls without options and builtin commands
+HISTCONTROL=ignoredups
+export HISTIGNORE="&:ls:[bf]g:exit"
+
+# Change info appearance of prompt
+function __setprompt {
+local BLUE="\[\033[0;34m\]"
+local NO_COLOUR="\[\033[0m\]"
+local SSH_IP=`echo $SSH_CLIENT | awk '{ print $1 }'`
+local SSH2_IP=`echo $SSH2_CLIENT | awk '{ print $1 }'`
+if [ $SSH2_IP ] || [ $SSH_IP ] ; then
+    local SSH_FLAG="@\h"
+fi
+PS1="$BLUE[\$(date +%H:%M)][\u$SSH_FLAG:\w]\\$ $NO_COLOUR"
+PS2="$BLUE>$NO_COLOUR "
+PS4='$BLUE+$NO_COLOUR '
+                      }
+__setprompt
