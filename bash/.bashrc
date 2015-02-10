@@ -124,6 +124,7 @@ alias ...="cd ../.."
 # cdh takes me to home directory
 alias cdh='cd ~/'
 
+# Stuff below adapted from: http://serverfault.com/questions/3743/what-useful-things-can-one-add-to-ones-bashrc
 # Change history behavior
 export HISTFILESIZE=20000
 export HISTSIZE=10000
@@ -134,9 +135,9 @@ shopt -s cmdhist
 HISTCONTROL=ignoredups
 export HISTIGNORE="&:ls:[bf]g:exit"
 
-# Change info appearance of prompt
+# Change info/appearance of prompt
 function __setprompt {
-local BLUE="\[\033[0;34m\]"
+local BLUE="\[\033[01;31m\]"
 local NO_COLOUR="\[\033[0m\]"
 local SSH_IP=`echo $SSH_CLIENT | awk '{ print $1 }'`
 local SSH2_IP=`echo $SSH2_CLIENT | awk '{ print $1 }'`
