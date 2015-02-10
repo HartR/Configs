@@ -65,6 +65,8 @@ set laststatus=2 " Always show the status line
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P "Format status line
 set cursorline " Highlight current line
 set hlsearch "Highlight matches when searching
+
+" Remap the directional keys to WASD
 inoremap jk <esc>
 vnoremap jk <esc>  
 nnoremap w <Up>
