@@ -9,9 +9,9 @@ then
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         rm /home/$USER/.bashrc
-        ln -s /home/$USER/LinuxConfig/vim/.vimrc /home/$USER/.bashrc
+        ln -s /home/$USER/LinuxConfig/bash/.bashrc /home/$USER/.bashrc
     fi
 else 
-    ln -s /home/$USER/LinuxConfig/vim/.vimrc /home/$USER/.bashrc
+    ln -s /home/$USER/LinuxConfig/bash/.bashrc /home/$USER/.bashrc
 fi
 

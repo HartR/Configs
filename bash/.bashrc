@@ -17,8 +17,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -99,15 +99,9 @@ alias ...="cd ../.."
 alias cdh='cd ~/'
 
 # Stuff below adapted from: http://serverfault.com/questions/3743/what-useful-things-can-one-add-to-ones-bashrc
-# Change history behavior
-export HISTFILESIZE=20000
-export HISTSIZE=10000
-shopt -s histappend
+
 # Combine multiline commands into one in history
 shopt -s cmdhist
-# Ignore duplicates, ls without options and builtin commands
-HISTCONTROL=ignoredups
-export HISTIGNORE="&:ls:[bf]g:exit"
 
 # Change info/appearance of prompt
 function __setprompt {

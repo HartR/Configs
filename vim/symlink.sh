@@ -15,3 +15,8 @@ else
     ln -s /home/$USER/LinuxConfig/vim/.vimrc /home/$USER/.vimrc
 fi
 
+# Checkout necessary plugins
+# TODO: check whether these directories already exist
+git clone https://github.com/bling/vim-airline ~/.vim/bundle/vim-airline
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim

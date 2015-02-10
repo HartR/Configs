@@ -53,6 +53,7 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 " Options added by myself
+execute pathogen#infect()
 set nu " Show line numbers
 set tabstop=4 " Number of spaces per tab
 set shiftwidth=4
@@ -62,7 +63,7 @@ set mat=2 " Set tenths of second to blink cursor on matching brackets
 colorscheme desert " Use desert colorscheme
 set wrap " Wrap lines that go beyond buffer
 set laststatus=2 " Always show the status line
-set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P "Format status line
+" set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P "Format status line
 set cursorline " Highlight current line
 set hlsearch "Highlight matches when searching
 
@@ -74,3 +75,15 @@ nnoremap a <Left>
 nnoremap s <Down>
 nnoremap kk dd
 nnoremap d <Right>
+
+" vim airline settings
+let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+let g:Powerline_mode_V="V·LINE"
+let g:Powerline_mode_cv="V·BLOCK"
+let g:Powerline_mode_S="S·LINE"
+let g:Powerline_mode_cs="S·BLOCK"
+let g:airline#extensions#tabline#enabled = 1
