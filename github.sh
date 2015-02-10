@@ -1,5 +1,6 @@
 #!/bin/bash
-git add -A
+git add -u
+git status
 echo "Write commit message and press [ENTER]:"
 read commitmessage
 git commit -m "$commitmessage"
