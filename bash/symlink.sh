@@ -1,7 +1,7 @@
 #!/bin/bash
-# Checks if you already have a .vimrc file in your home directory
-# If you do, it asks for permission to delete it then symlink new .vimrc
-# If not, symlinks new .vimrc to home folder
+# Checks if you already have a .bashrc file in your home directory
+# If you do, it asks for permission to delete it then symlink new .bashrc
+# If not, symlinks new .bashrc to home folder
 if [ -e /home/$USER/.bashrc ]
 then
     read -p ".bashrc already exists. Delete and continue? [y/n] " -n 1 -r
