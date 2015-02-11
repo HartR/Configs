@@ -90,6 +90,7 @@ alias cdc='cd /opt/bcm/OnePhone/pub/builds'
 alias ssh='ssh -i ~/.ssh/devuser'
 alias scp='scp -i ~/.ssh/devuser'
 source /opt/bcm/WRL/build_env.sh
+export COMMAND_NOT_FOUND_INSTALL_PROMPT=1
 
 # Add ability to go back many directories with only ellipses
 alias ..="cd .."
