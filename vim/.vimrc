@@ -67,15 +67,6 @@ set laststatus=2 " Always show the status line
 set cursorline " Highlight current line
 set hlsearch "Highlight matches when searching
 
-" Remap the directional keys to WASD
-inoremap jk <esc>
-vnoremap jk <esc>  
-nnoremap w <Up>
-nnoremap a <Left>
-nnoremap s <Down>
-nnoremap kk dd
-nnoremap d <Right>
-
 " vim airline settings
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
