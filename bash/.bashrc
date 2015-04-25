@@ -1,7 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-# Modified by Hart Russell Feb. 10, 2015
+# Modified by Hart Russell April 24, 2015
 
 # If not running interactively, don't do anything
 case $- in
@@ -86,10 +86,8 @@ if ! shopt -oq posix; then
 fi
 
 alias fuck='sudo $(fc -nl -1)'
-alias cdc='cd /opt/bcm/OnePhone/pub/builds'
 alias ssh='ssh -i ~/.ssh/devuser'
 alias scp='scp -i ~/.ssh/devuser'
-source /opt/bcm/WRL/build_env.sh
 export COMMAND_NOT_FOUND_INSTALL_PROMPT=1
 
 # Add ability to go back many directories with only ellipses
