@@ -65,3 +65,4 @@ set laststatus=2 " Always show the status line
 " set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P "Format status line
 set cursorline " Highlight current line
 set hlsearch "Highlight matches when searching
+set clipboard=unnamedplus "puts yanks into system clipboard
