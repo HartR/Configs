@@ -94,9 +94,6 @@ export COMMAND_NOT_FOUND_INSTALL_PROMPT=1
 alias ..="cd .."
 alias ...="cd ../.."
 
-# cdh takes me to home directory
-alias cdh='cd ~/'
-
 # Stuff below adapted from: http://serverfault.com/questions/3743/what-useful-things-can-one-add-to-ones-bashrc
 
 # Combine multiline commands into one in history
