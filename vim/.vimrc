@@ -65,4 +65,6 @@ set laststatus=2 " Always show the status line
 " set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P "Format status line
 set cursorline " Highlight current line
 set hlsearch "Highlight matches when searching
+"In order for unnamedplus to work, get a vim compiled with the +clipboard
+"feature, like vim-gtk
 set clipboard=unnamedplus "puts yanks into system clipboard
