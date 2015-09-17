@@ -12,34 +12,6 @@ runtime! debian.vim
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'Valloric/YouCompleteMe'
-
-Plugin 'octol/vim-cpp-enhanced-highlight'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-
 " Uncomment the next line to make Vim more Vi-compatible
 " NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
 " options, so any other options should be set AFTER setting 'compatible'.
@@ -84,6 +56,7 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 " Options added by myself
+colorscheme elflord
 set nu " Show line numbers
 set tabstop=4 " Number of spaces per tab
 set shiftwidth=4
@@ -99,11 +72,3 @@ set hlsearch "Highlight matches when searching
 "feature, like vim-gtk
 set clipboard=unnamedplus "puts yanks into system clipboard
 imap jk <Esc>
-
-let g:ycm_confirm_extra_conf = 0
-
-"Make colorscheme solarized
-set t_Co=256
-syntax enable
-set background=dark
-colorscheme solarized
