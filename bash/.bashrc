@@ -121,3 +121,9 @@ __setprompt
 if [[ "$OSTYPE" == "darwin"* ]]; then
     alias ls="ls -AFG"
 fi
+
+#Check for aliases/paths I need for work
+if [ -f ~/.bash_work ]; then
+    . ~/.bash_work
+fi
+
