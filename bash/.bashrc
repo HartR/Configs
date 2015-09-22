@@ -116,3 +116,8 @@ PS2="$BLUE>$NO_COLOUR "
 PS4='$BLUE+$NO_COLOUR '
                       }
 __setprompt
+
+#Set Mac OSX options
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    alias ls="ls -AFG"
+fi
