@@ -90,9 +90,6 @@ alias ssh='ssh -i ~/.ssh/devuser'
 alias scp='scp -i ~/.ssh/devuser'
 export COMMAND_NOT_FOUND_INSTALL_PROMPT=1
 
-alias rm="rm -i"
-alias mv="mv -i"
-
 # Add ability to go back many directories with only ellipses
 alias ..="cd .."
 alias ...="cd ../.."
