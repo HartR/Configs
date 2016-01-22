@@ -117,6 +117,13 @@ __setprompt
 #Set Mac OSX options
 if [[ "$OSTYPE" == "darwin"* ]]; then
     alias ls="ls -AFG"
+
+    #git autocomplete for osx
+    if [ -f `brew --prefix`/etc/bash_completion ]; then
+        . `brew --prefix`/etc/bash_completion
+    fi
+else
+    alias rm='trash-put'
 fi
 
 #Check for aliases/paths I need for work
@@ -124,9 +131,6 @@ if [ -f ~/.bash_work ]; then
     . ~/.bash_work
 fi
 
-#git autocomplete for osx
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source /usr/share/git/completion/git-completion.bash
