@@ -122,8 +122,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
     fi
-else
-    #set linux options
 fi
 
 #Check for aliases/paths I need for work
