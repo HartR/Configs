@@ -123,7 +123,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         . `brew --prefix`/etc/bash_completion
     fi
 else
-    alias rm='trash-put'
+    #set linux options
 fi
 
 #Check for aliases/paths I need for work
