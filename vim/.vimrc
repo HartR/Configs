@@ -62,9 +62,7 @@ set laststatus=2 " Always show the status line
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P "Format status line
 set cursorline " Highlight current line
 set hlsearch "Highlight matches when searching
-imap jk <Esc>
-vmap jk <Esc>
-let g:ycm_path_to_python_interpreter='usr/local/lib/python2.7'
+
 "Set Mac OSX options
 let s:uname = system("uname")
 if s:uname == "Darwin\n"

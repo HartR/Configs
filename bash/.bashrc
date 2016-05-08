@@ -114,21 +114,8 @@ PS4='$BLUE+$NO_COLOUR '
                       }
 __setprompt
 
-#Set Mac OSX options
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    alias ls="ls -AFG"
-
-    #git autocomplete for osx
-    if [ -f `brew --prefix`/etc/bash_completion ]; then
-        . `brew --prefix`/etc/bash_completion
-    fi
-fi
-
 #Check for aliases/paths I need for work
 if [ -f ~/.bash_work ]; then
     . ~/.bash_work
 fi
 
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-source /usr/share/git/completion/git-completion.bash
