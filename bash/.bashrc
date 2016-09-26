@@ -88,6 +88,7 @@ fi
 alias fuck='sudo $(fc -nl -1)'
 alias ssh='ssh -i ~/.ssh/devuser'
 alias scp='scp -i ~/.ssh/devuser'
+alias 'git log'='git log --graph --decorate --pretty=oneline --abbrev-commit'
 export COMMAND_NOT_FOUND_INSTALL_PROMPT=1
 
 # Add ability to go back many directories with only ellipses
