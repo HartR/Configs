@@ -9,9 +9,9 @@ then
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         rm ~/.bashrc
-        ln -s ~/LinuxConfig/bash/.bashrc ~/.bashrc
+        ln -s ~/Configs/bash/.bashrc ~/.bashrc
     fi
 else 
-    ln -s /home/$USER/LinuxConfig/bash/.bashrc /home/$USER/.bashrc
+    ln -s ~/Configs/bash/.bashrc ~/.bashrc
 fi
-
+touch ~/.bash_work

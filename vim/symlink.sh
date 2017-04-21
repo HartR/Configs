@@ -9,8 +9,8 @@ then
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         rm ~/.vimrc
-        ln -s ~/LinuxConfig/vim/.vimrc ~/.vimrc
+        ln -s ~/Configs/vim/.vimrc ~/.vimrc
     fi
 else 
-    ln -s /home/$USER/LinuxConfig/vim/.vimrc /home/$USER/.vimrc
+    ln -s ~/Configs/vim/.vimrc ~/.vimrc
 fi
