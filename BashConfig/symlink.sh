@@ -14,4 +14,5 @@ then
 else 
     ln -s ~/Configs/BashConfig/.bashrc ~/.bashrc
 fi
+source ~/.bashrc
 touch ~/.bash_work
