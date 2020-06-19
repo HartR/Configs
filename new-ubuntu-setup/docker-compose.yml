@@ -29,3 +29,22 @@ services:
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
+
+  qbittorrent:
+    image: "linuxserver/qbittorrent"
+    container_name: "qbittorrent"
+    volumes:
+      - ${USERDIR}/docker/qbittorrent:/config
+      - ${USERDIR}/Downloads/completed:/downloads
+      - ${USERDIR}/docker/shared:/shared
+    ports:
+      - "8080:8080"
+      - "6881:6881"
+      - "6881:6881/udp"
+    restart: always
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK_SET=002
+      - WEBUI_PORT=8080
