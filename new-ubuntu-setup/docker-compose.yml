@@ -1,4 +1,4 @@
-version: "3"
+version: "3.0"
 
 # More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
 services:
@@ -16,35 +16,65 @@ services:
       WEBPASSWORD: 'I9xA8zjW'
       DNS1: '9.9.9.9'
       DNSSEC: 'True'
-      ServerIP: '192.168.1.138'
+      ServerIP: '192.168.86.44'
     # Volumes store your data between container upgrades
     volumes:
-      - '${USERDIR}/etc-pihole/:/etc/pihole/'
-      - '${USERDIR}/etc-dnsmasq.d/:/etc/dnsmasq.d/'
-    dns:
-      - 127.0.0.1
-      - 1.1.1.1
+      - /Users/hartrussell/pihole/etc:/etc/pihole/'
+      - /Users/hartrussell/pihole/dnsmasq:/etc/dnsmasq.d/'
+    #dns:
+    #  - 127.0.0.1
+     # - 1.1.1.1
     # Recommended but not required (DHCP needs NET_ADMIN)
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
-
+    
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    command: --interval 30000
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    
+  plex:
+    image: plexinc/pms-docker
+    container_name: plex
+    network_mode: bridge
+    ports:
+      - 32400:32400/tcp
+      - 3005:3005/tcp
+      - 8324:8324/tcp
+      - 32469:32469/tcp
+      - 1900:1900/udp
+      - 32410:32410/udp
+      - 32412:32412/udp
+      - 32413:32413/udp
+      - 32414:32414/udp
+    environment:
+      - VERSION=docker
+      - PLEX_CLAIM=claim-ywr8352J97ie31PdX6qE
+    volumes:
+      - /Users/hartrussell/Plex/config:/config
+      - /Volumes/SuperSickFolder/Television:/tv
+      - /Volumes/SuperSickFolder/Movies:/movies
+    restart: unless-stopped
+      
   qbittorrent:
     image: "linuxserver/qbittorrent"
     container_name: "qbittorrent"
     volumes:
-      - ${USERDIR}/docker/qbittorrent:/config
-      - ${USERDIR}/Downloads/completed:/downloads
-      - ${USERDIR}/docker/shared:/shared
+      - /Users/hartrussell/qbit/config:/config
+      - /Users/hartrussell/download:/downloads
     ports:
       - "8080:8080"
       - "6881:6881"
       - "6881:6881/udp"
     restart: always
     environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
+      - TZ=America/Los_Angeles
       - UMASK_SET=002
       - WEBUI_PORT=8080
+      
+      
