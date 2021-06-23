@@ -13,7 +13,7 @@ services:
       - "443:443/tcp"
     environment:
       TZ: 'America/Los_Angeles'
-      WEBPASSWORD: $piholepass
+      "WEBPASSWORD: ${piholepass}"
       DNS1: '9.9.9.9'
       DNSSEC: 'True'
       ServerIP: '192.168.86.44'
@@ -87,8 +87,8 @@ services:
     devices:
       - /dev/net/tun
     environment:
-      - USER=$nordemail
-      - PASS=$nordpassword
+      - "USER=${nordemail}"
+      - "PASS=${nordpassword}"
       - CONNECT=United_States 
       - TECHNOLOGY=NordLynx
       - NETWORK=192.168.1.0/24
