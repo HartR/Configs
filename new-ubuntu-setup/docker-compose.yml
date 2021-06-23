@@ -13,19 +13,13 @@ services:
       - "443:443/tcp"
     environment:
       TZ: 'America/Los_Angeles'
-      "WEBPASSWORD: ${piholepass}"
+      "WEBPASSWORD: ${piHolePass}"
       DNS1: '9.9.9.9'
       DNSSEC: 'True'
       ServerIP: '192.168.86.44'
-    # Volumes store your data between container upgrades
     volumes:
       - /Users/hartrussell/pihole/etc:/etc/pihole/'
       - /Users/hartrussell/pihole/dnsmasq:/etc/dnsmasq.d/'
-    #dns:
-    #  - 127.0.0.1
-     # - 1.1.1.1
-    # Recommended but not required (DHCP needs NET_ADMIN)
-    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
@@ -87,9 +81,9 @@ services:
     devices:
       - /dev/net/tun
     environment:
-      - "USER=${nordemail}"
-      - "PASS=${nordpassword}"
-      - CONNECT=United_States 
+      - "USER=${nordEmail}
+      - "PASS=${nordPass}"
+      - CONNECT=us8640
       - TECHNOLOGY=NordLynx
       - NETWORK=192.168.1.0/24
     ports:
